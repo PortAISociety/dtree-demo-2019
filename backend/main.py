@@ -35,5 +35,4 @@ def classify():
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
 
-    # the endpoint is http://192.168.1.147:5000/api/dectree
     # check test.py to see an example of python post sent - backend picked it up and worked
