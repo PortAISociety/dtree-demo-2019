@@ -16,17 +16,17 @@ def classify():
 
 
     data = request.data
-    print(data)
+    jsonData = json.loads(data)
+
+    # Input Data will be in format { 'UserResults' : '[a,b,c]' }
+
+    # results stores list [a,b,c]
+    results = jsonData["UserResults"]
+    result = dt.classify(results)
     
-
-    # data contains the input data
-    # pass input json to dt.classify
-    # or change json to list
-    # output classification
-
-    # classification = dt.classify("a")
+    # Output Data will be in format { 'Classification' : 'classification' }
     res = {}
-    res['Result'] = "classification"
+    res["Classification"] = result[0]
     resj = json.dumps(res)
 
     return resj
@@ -35,4 +35,5 @@ def classify():
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
 
+    # the endpoint is http://192.168.1.147:5000/api/dectree
     # check test.py to see an example of python post sent - backend picked it up and worked

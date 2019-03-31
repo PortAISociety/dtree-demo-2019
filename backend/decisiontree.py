@@ -1,29 +1,26 @@
-# Write decisiontree functions
-# Pull test data from decisiontreedata
-# Use this to make model
-# Return classificaiton
-import sklearn as sk
-
-
-# Get test data and turn into list of lists, ie [[0,1],[1,3]]
-# Get test data and get results and turn into list, ie [Something, Something else]
-# Must match number with test data questions
-# finally predict using list of inputs
-
-# clf = tree.DecisionTreeClassifier()
-# clffit = clf.fit(TestDataList, TestDataResults)
-# return clf.predict(User Data)
+from sklearn import tree
+import json
 
 
 def classify(results):
-    
+    # Just need getTestData to returns tuff from decisiontreedata
+    print(results)
+
     testDataList, testDataResults = getTestData()
-    clf = sk.tree.DecisionTreeClassifier()
+    clf = tree.DecisionTreeClassifier()
     clf = clf.fit(testDataList, testDataResults)
     clfres = clf.predict(results)
 
-    return results
+    return clfres
 
 def getTestData():
-    return "a", "b"
+    with open('decisiontreedata.JSON', 'r') as dtfile:
+        data=dtfile.read()
+    dtreeobj = json.loads(data)
+    dataList = dtreeobj["testDataList"]
+    dataRes = dtreeobj["testDataResults"]
+
+    return dataList, dataRes
+
     # get data from decisiontreedata, turn into list and pass to classify
+
