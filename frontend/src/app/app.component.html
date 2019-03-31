@@ -1,20 +1,57 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+
+<mat-toolbar color="primary">
+  AI Society
+</mat-toolbar>
+
+<mat-card class="main">
+    <mat-card-header>
+        <mat-card-title>Explanation</mat-card-title>
+      </mat-card-header>
+        <p>
+          Hello. Welcome to the Student Conference Demo of the Artificial Intelligence and Robotics Society. This Web Application you are
+          using was built by our Society to show you the power of AI in everyday life.
+        </p>
+        <p>
+          The purpose of this App is to, based on the answers to some questions, recommend a topic for you to present about!
+        </p>
+</mat-card>
+
+<mat-card class="main">
+    <p>
+    <mat-form-field>
+        <mat-label>Question</mat-label>
+        <mat-select [(value)]="this.q1answer">
+          <mat-option *ngFor="let answer of questionAnswers" [value]="answer.value">
+            {{answer.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field>
+          <mat-label>Question</mat-label>
+          <mat-select [(value)]="this.q2answer">
+            <mat-option *ngFor="let answer of questionAnswers" [value]="answer.value">
+              {{answer.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+            <mat-label>Question</mat-label>
+            <mat-select [(value)]="this.q3answer">
+              <mat-option *ngFor="let answer of questionAnswers" [value]="answer.value">
+                {{answer.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </p>
+  <button (click)="onClassify()" mat-raised-button color="primary">Classify</button>
+
+  <p>You selected: {{this.q1answer}}, {{this.q2answer}} and {{this.q3answer}}</p>
+  <p>And your class is: {{class}}</p>
+
+
+</mat-card>
 
