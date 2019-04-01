@@ -4,3 +4,15 @@
     margin-top: 2%;
     
 }
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  i {
+      font-size: 200%;
+  }
+
+  mat-form-field {
+      width: 100%;
+  }
