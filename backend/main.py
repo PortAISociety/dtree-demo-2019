@@ -1,19 +1,20 @@
 import sys
-import flask
-from flask import request
-import decisiontree as dt
+import decisiontree as dt 
 import json
+from flask import Flask, jsonify, request
+from flask_cors import CORS
+# from flask_cors import CORS, cross_origin
 
-app = flask.Flask(__name__)
+app = Flask(__name__)
+CORS(app)
 app.config["DEBUG"] = True
+# app.config['CORS_HEADERS'] = 'Content-Type'
 
-# Write http function to send json {a,b,c,d} of inputs
-# Then run the decisiontree function using this data and return prediction
+
 
 @app.route('/api/dectree', methods=['GET', 'POST'])
 def classify():
     # Run classification with sent data as json, then frontend can pick up
-
 
     data = request.data
     jsonData = json.loads(data)
@@ -36,4 +37,5 @@ if __name__ == "__main__":
     app.run(host='0.0.0.0')
 
     # the endpoint is http://192.168.1.147:5000/api/dectree
+    # 5.151.28.129
     # check test.py to see an example of python post sent - backend picked it up and worked
