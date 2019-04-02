@@ -27,6 +27,7 @@ export class AppComponent {
   myObj;
   disabledq2 = new FormControl(true);
   disabledq3 = new FormControl(true);
+  disabledButton = new FormControl(true)
 
 
 
@@ -73,6 +74,10 @@ export class AppComponent {
       this.q3 = "";
       this.q2answer = ""
       this.q3answer = ""
+      this.disabledq3 = new FormControl(true);
+      this.disabledButton = new FormControl(true)
+
+
 
     } else {
       this.disabledq2 = new FormControl(false);
@@ -80,6 +85,10 @@ export class AppComponent {
       this.q3 = "";
       this.q2answer = ""
       this.q3answer = ""
+      this.disabledq3 = new FormControl(true);
+      this.disabledButton = new FormControl(true)
+
+
     }
   }
 
@@ -89,10 +98,12 @@ export class AppComponent {
         this.q3 = "Would you consider yourself good at Programming?"
         this.disabledq3 = new FormControl(false);
         this.q3answer = ""
+        this.disabledButton = new FormControl(true)
       } else {
         this.q3 = "Would you consider yourself good at Binary Logic?"
         this.disabledq3 = new FormControl(false);
         this.q3answer = ""
+        this.disabledButton = new FormControl(true)
 
       }
     } else {
@@ -100,16 +111,25 @@ export class AppComponent {
         this.q3 = "Would you consider yourself good at Graphical Design?"
         this.disabledq3 = new FormControl(false);
         this.q3answer = ""
+        this.disabledButton = new FormControl(true)
 
       } else {
         this.q3 = "Would you consider yourself good at UI/UX Design?"
         this.disabledq3 = new FormControl(false);
         this.q3answer = ""
-
+        this.disabledButton = new FormControl(true)
     }
   }
     
   }
 
+  onQ3Change(event:Event):void {
+    if (this.q1answer !== "" && this.q2answer !== "" && this.q3answer !== "") {
+      this.disabledButton = new FormControl(false)
+
+    } else {
+      
+    }
+  }
 
 }

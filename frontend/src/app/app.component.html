@@ -43,17 +43,17 @@
       <p>
         <mat-form-field>
             <mat-label>{{q3}}</mat-label>
-            <mat-select [(value)]="this.q3answer" [disabled]="disabledq3.value">
+            <mat-select [(value)]="this.q3answer" (selectionChange)="onQ3Change($event)" [disabled]="disabledq3.value">
               <mat-option *ngFor="let answer of questionAnswers" [value]="answer.value">
                 {{answer.viewValue}}
               </mat-option>
             </mat-select>
           </mat-form-field>
         </p>
-  <button (click)="onClassify()" mat-raised-button color="primary">Classify</button>
+  <button (click)="onClassify()" [disabled]="disabledButton.value" mat-raised-button color="primary">Classify</button>
 
   <p>You selected: {{this.q1answer}}, {{this.q2answer}} and {{this.q3answer}}</p>
-  <p>And your class is: {{class}}</p>
+  <p>And your class is: <strong>{{class}}</strong></p>
 
 
 </mat-card>
