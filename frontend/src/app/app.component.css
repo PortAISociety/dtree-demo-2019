@@ -16,3 +16,11 @@
   mat-form-field {
       width: 100%;
   }
+
+  mat-toolbar {
+    background: lightblue;
+  }
+
+  #portaisoclogo {
+      height: 100%;
+  }

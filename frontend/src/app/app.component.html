@@ -1,6 +1,7 @@
 
-<mat-toolbar color="primary">
-  AI Society
+<mat-toolbar>
+  <!-- AISOC logo -->
+  <img id="portaisoclogo" src="../assets/Logo_Long.png">
   <span class="example-spacer"></span>
   <button mat-button onclick="location.href='https://github.com/PortAISociety/dtree-demo-2019'"><i class="fab fa-github"></i> GitHub</button>
   
@@ -52,9 +53,7 @@
         </p>
   <button (click)="onClassify()" [disabled]="disabledButton.value" mat-raised-button color="primary">Classify</button>
 
-  <p>You selected: {{this.q1answer}}, {{this.q2answer}} and {{this.q3answer}}</p>
-  <p>And your class is: <strong>{{class}}</strong></p>
-
+  <p>Your classification is: <strong>{{class}}</strong></p>
 
 </mat-card>
 

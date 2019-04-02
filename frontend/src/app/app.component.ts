@@ -28,9 +28,6 @@ export class AppComponent {
   disabledq2 = new FormControl(true);
   disabledq3 = new FormControl(true);
   disabledButton = new FormControl(true)
-
-
-
   questionAnswers: QuestionAnswer[] = [
     
     {value: 0, viewValue: 'No'},
@@ -119,16 +116,12 @@ export class AppComponent {
         this.q3answer = ""
         this.disabledButton = new FormControl(true)
     }
-  }
-    
+    }
   }
 
   onQ3Change(event:Event):void {
     if (this.q1answer !== "" && this.q2answer !== "" && this.q3answer !== "") {
-      this.disabledButton = new FormControl(false)
-
-    } else {
-      
+      this.disabledButton = new FormControl(false)   
     }
   }
 
